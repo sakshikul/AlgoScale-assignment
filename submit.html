@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="submit.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "form-submit">
+    <a href ="index.html"class="form-data-button">Home</a>
+   <div class="form__submit-data">
+     <label for="id"><b>id</b></label>
+     <input id='id' type="text" placeholder="id" name="id" required><br>
+
+     <label for="purpose"><b>purpose</b></label>
+     <input id='purpose' type="text" placeholder="purpose" name="purpose" required><br>
+     <label for="city"><b>city</b></label>
+     <input id='city' type="text" placeholder="city" name="city" required><br>
+     <label for="address"><b>Address</b></label>
+     <input id='address' type="text" placeholder="Address" name="address" required><br>
+     <label for="interviewer"><b>Interviewer</b></label>
+     <input id='interviewer' type="text" placeholder="Enter Interviewer name" name="interviewer" required><br>
+     <label for = "interview" ><b>Interviewee </b></label>
+     <input id='Interviewee' type="text" placeholder="Interviewee" required><br>
+     <label for="email"><b>Email</b></label>
+     <input id='email' type="text" placeholder="Enter Email" name="email" required><br>
+     <label for="email"><b>Mobile Number</b></label>
+     <input id='mobile' type="text" name="number"  placeholder="Number" required>
+
+    </div>
+</body>
+<script >
+window.onload = function() {
+  document.getElementById('purpose').value=localStorage.getItem("purpose");
+  document.getElementById('city').value=localStorage.getItem("city");
+  if (localStorage.getItem("address") !== null) {
+    document.getElementById('address').value=localStorage.getItem("address");
+
+}
+if (localStorage.getItem("interviewer") !== null) {
+  document.getElementById('interviewer').value=localStorage.getItem("interviewer");
+
+}
+if (localStorage.getItem("Interviewee") !== null) {
+  document.getElementById('Interviewee').value=localStorage.getItem("Interviewee");
+
+}
+if (localStorage.getItem("email") !== null) {
+  document.getElementById('email').value=localStorage.getItem("email");
+
+}
+if (localStorage.getItem("mobile") !== null) {
+  document.getElementById('mobile').value=localStorage.getItem("mobile");
+
+}
+document.getElementById('id').value=localStorage.getItem("id");
+
+};
+</script>
+</html>

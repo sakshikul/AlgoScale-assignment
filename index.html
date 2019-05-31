@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href ="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class = "container">
+        <div class="form-wrapper">
+                <form>
+                        <label for="interview"  class="pattern">Interview Purpose</label>
+                            <select id="interview" name="Interview purpose">
+                                <option value="Visa">Visa</option>
+                                <option value="Permanent residence">Permanent residence</option>
+                            </select>
+                            <br>
+                        <label for="city"  class="pattern">City</label>
+                            <select id="city" name="city" onchange = "popUpForm()">
+                                <option value="london">London</option>
+                                <option value="brighton">Brighton</option>
+                                <option value="belfast">Belfast</option>
+                                <option value="cardiff">Cardiff</option>
+                                <option value="newcastle">newCastle</option>
+                                <option value="elsewhere" id ="create" >Elsewhere</option>
+                            </select>
+                    </form>
+                    <div class="popup" style="display:none" id="new-form">
+                        <form action="" class="form-create">
+                                <label for="address"><b>Address</b></label>
+                                <input id='address' type="text" placeholder="Address" name="address" required><br>
+                                <label for="interviewer"><b>Interviewer</b></label>
+                                <input id='interviewer' type="text" placeholder="Enter Interviewer name" name="interviewer" required><br>
+                                <label for = "interview" ><b>Interviewee </b></label>
+                                <input id='Interviewee' type="text" placeholder="Interviewee" required><br>
+                                <label for="email"><b>Email</b></label>
+                                <input id='email' type="text" placeholder="Enter Email" name="email" required><br>
+                                <label for="email"><b>Mobile Number</b></label>
+                                <input id='mobile' type="text" name="number"  placeholder="Number" required>
+                        </form>
+                    </div>
+                    <button onclick="idgeneration()" class="create-id">Generate Id</button>
+                    <div id="form-id">
+                      <label id="formId">-</label>
+                    </div>
+                    <br>
+                    <a href = "submit.html" class = "form-submit" onclick = "formsubmission()">Submit</a>
+                </div>
+            </div>
+
+    
+    <script>
+            var formId=0
+             function popUpForm(){
+                var x = document.getElementById('city').value;
+                if(x === 'elsewhere'){
+                    document.getElementById('new-form').style.display = "block";
+                } else {
+                    document.getElementById('new-form').style.display = "none";
+                }
+        
+        
+            }
+        
+            function idgeneration(){
+              var timestamp = new Date().getUTCMilliseconds();
+              city=document.getElementById('city').value;
+              document.getElementById('form-id').style.display = "block";
+              document.getElementById('formId').innerHTML = '#'+timestamp+city;
+              formId='#'+timestamp+city;
+              console.log(formId)
+        
+            }
+        
+            function formsubmission(){
+              localStorage.setItem("purpose", document.getElementById('interview').value);
+              localStorage.setItem("city", document.getElementById('city').value);
+              localStorage.setItem("id", formId);
+              if(document.getElementById('city').value==='elsewhere'){
+                localStorage.setItem("address", document.getElementById('address').value);
+                localStorage.setItem("interviewer", document.getElementById('interviewer').value);
+                localStorage.setItem("Interviewee", document.getElementById('Interviewee').value);
+                localStorage.setItem("email", document.getElementById('email').value);
+                localStorage.setItem("mobile", document.getElementById('mobile').value);
+        
+              }else{
+                localStorage.setItem("address", '');
+                localStorage.setItem("interviewer", '');
+                localStorage.setItem("Interviewee", '');
+                localStorage.setItem("email", '');
+                localStorage.setItem("mobile", '');
+        
+              }
+              
+            }
+        
+        
+        
+        
+        
+            </script>
+</body>
+</html>

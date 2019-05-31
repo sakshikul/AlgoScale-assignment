@@ -1,0 +1,37 @@
+body{
+    background: url('https://st2.depositphotos.com/3935465/6662/i/950/depositphotos_66629277-stock-photo-food-background-with-fresh-organic.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  .form-data-button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .form-data-button:hover{
+    background-color: #45a049;
+  }
+  .form-submit{
+      padding :10px;
+  }
+  .form__submit-data{
+     margin-top :40px;
+     text-align: center;
+     width :50%;
+     margin-left: 20%;
+  }
+  
+  .form__submit-data label {
+      color: white;
+   
+
+  }
+  .form__submit-data input{
+    padding: 10px;
+    margin-left: 10px;
+    margin-top : 10px;
+    width :100%;
+  }

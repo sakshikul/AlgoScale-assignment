@@ -1,0 +1,80 @@
+body{
+    background: url('https://st2.depositphotos.com/3935465/6662/i/950/depositphotos_66629277-stock-photo-food-background-with-fresh-organic.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  .form-wrapper{
+    width: 60%;
+    margin: 40px auto 0;
+    background: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .pattern{
+      color :green;
+      margin-bottom:10px;
+      margin-top:20px;
+  }
+  select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+   
+  }
+  .form-create{
+      text-align: center;
+      box-shadow: 0 0 11px 0 rgba(0,0,0,0.2);
+
+  }
+  .form-create input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  .popup form {
+      padding :25px;
+  }
+  .popup form label {
+      margin :9px;
+  }
+  #form-id{
+      display: none;
+  }
+  .form-submit, .create-id{
+    background-color: #4CAF50;
+    color: white!important;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin :20px 10px 10px 10px;
+    text-decoration: none!important;
+    
+  }
+  .form-submit{
+      float : right;
+      margin-top :-58px;
+  }
+  .form-submit:hover, .create-id:hover{
+    background-color: #45a049;
+  }
+
+
+  @media only screen and (max-width: 770px){
+      .form-wrapper{
+          width :100%;
+      }
+  }
+
+  @media only screen and (max-width: 345px){
+      .form-submit{
+          float : none;
+          display: block;
+      }
+      .create-id{
+          width :90%;
+      }
+  }
